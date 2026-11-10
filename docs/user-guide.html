@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoFix Car Repair - User Guide</title>
+    <style>
+        :root {
+            --primary: #ff4d4d;
+            --secondary: #1a1a1a;
+            --sidebar-bg: #f8f9fa;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --bg-body: #ffffff;
+            --border-color: #dee2e6;
+            --code-bg: #1a1a1a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Roboto', -apple-system, sans-serif;
+            color: var(--text-main);
+            background: var(--bg-body);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        .doc-sidebar {
+            width: 300px;
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            padding: 2.5rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .sidebar-brand span { color: var(--primary); }
+
+        .nav-group { margin-bottom: 2.5rem; }
+        .nav-title {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.7rem 1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .doc-content {
+            flex: 1;
+            padding: 5rem 6.5rem;
+            max-width: 1100px;
+        }
+
+        section { margin-bottom: 6rem; scroll-margin-top: 2rem; }
+        
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--secondary); margin-bottom: 1.5rem; letter-spacing: -2px; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--secondary); margin-top: 4rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.8rem; }
+        h3 { font-size: 1.6rem; font-weight: 700; color: var(--secondary); margin-top: 3rem; margin-bottom: 1.2rem; }
+        
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #444; }
+
+        .service-tip {
+            background: #fff8f8;
+            border-left: 5px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        code { background: #fdf2f2; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'Monaco', monospace; font-size: 0.9em; color: var(--primary); }
+        pre { background: var(--code-bg); color: #e1e1e1; padding: 2rem; border-radius: 12px; overflow-x: auto; margin: 2rem 0; }
+        pre code { background: transparent; color: inherit; padding: 0; }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .doc-content { padding: 4rem; }
+        }
+
+        @media (max-width: 930px) {
+            body { flex-direction: column; }
+            .doc-sidebar { width: 100%; height: auto; position: static; padding: 2rem; }
+            .doc-content { padding: 2.5rem; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="doc-sidebar">
+        <div class="sidebar-brand">AUTO<span>FIX.GUIDE</span></div>
+        
+        <div class="nav-group">
+            <div class="nav-title">Shop Setup</div>
+            <a href="#intro" class="nav-link">Introduction</a>
+            <a href="#get-started" class="nav-link">Getting Started</a>
+            <a href="#structure" class="nav-link">File Structure</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Mechanical Editing</div>
+            <a href="#sections" class="nav-link">Section Editing</a>
+            <a href="#components" class="nav-link">Component Guide</a>
+            <a href="#theme" class="nav-link">Theme & Styling</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Logistics</div>
+            <a href="#js" class="nav-link">JavaScript Logic</a>
+            <a href="#seo" class="nav-link">SEO & Optimization</a>
+            <a href="#deployment" class="nav-link">Deployment</a>
+        </div>
+    </aside>
+
+    <main class="doc-content">
+        <section id="intro">
+            <h1>Auto Center Guide</h1>
+            <p>Welcome to the AutoFix administration guide. This document provides a step-by-step walkthrough for customizing the template for your car repair or mechanic business.</p>
+            <div class="service-tip">
+                <strong>Repair Tip:</strong> Use high-contrast photos of your tools, garage, and clean engine bays. Authentic photography significantly increases trust in the automotive industry.
+            </div>
+        </section>
+
+        <section id="get-started">
+            <h2>Getting Started</h2>
+            <ol style="margin-left: 2rem;">
+                <li>Extract the AutoFix archive.</li>
+                <li>Open the primary folder in your preferred code editor.</li>
+                <li>Navigate to <code>index.html</code> to view the industrial landing experience.</li>
+            </ol>
+        </section>
+
+        <section id="structure">
+            <h2>File Structure</h2>
+            <pre><code>/car-repair-template/
+├── index.html              # The master landing page
+├── css/styles.css          # Design system
+├── js/main.js              # Interactivity engine
+└── images/                 # Theme graphics</code></pre>
+        </section>
+
+        <section id="sections">
+            <h2>Section Editing</h2>
+            <h3>The Industrial Header</h3>
+            <p>Update your shop's name in the header segment of <code>index.html</code>.</p>
+            <pre><code>&lt;header class="header" id="header"&gt;
+    &lt;div class="header-container"&gt;
+        &lt;a href="#" class="logo"&gt;
+            &lt;span class="logo-text"&gt;AUTO<span>FIX</span>&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+
+            <h3>The Service Grid</h3>
+            <p>Services are modular. Duplicate a <code>.service-card</code> component to add new mechanic specialties.</p>
+            <pre><code>&lt;div class="service-card"&gt;
+    &lt;h3&gt;New Service&lt;/h3&gt;
+    &lt;p&gt;Description of repair...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <section id="theme">
+            <h2>Theme & Styling</h2>
+            <h3>Updating Brand Colors</h3>
+            <p>Modify the core CSS tokens in <code>styles.css</code> to match your automotive brand colors.</p>
+            <pre><code>:root {
+    --color-primary: #ff4d4d;  /* Mechanic Red */
+    --color-secondary: #1a1a1a; /* Steel Grey */
+}</code></pre>
+        </section>
+
+        <section id="seo">
+            <h2>SEO & Optimization</h2>
+            <p>To rank in local searches, update the <code>&lt;meta&gt;</code> tags in the head of your document with your city and specific specialties (e.g., "Transmission Repair in Detroit").</p>
+        </section>
+
+        <section id="deployment">
+            <h2>Deployment</h2>
+            <p>AutoFix is a high-performance static template. Deploy the files to any standard web server or static platform like Netlify or GitHub Pages.</p>
+        </section>
+    </main>
+</body>
+</html>

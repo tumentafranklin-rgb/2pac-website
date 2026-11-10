@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoFix Car Repair - Technical Documentation</title>
+    <style>
+        :root {
+            --primary: #ff4d4d;
+            --secondary: #1a1a1a;
+            --dark: #121212;
+            --sidebar-bg: #f8f9fa;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --bg-body: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Roboto', -apple-system, sans-serif;
+            color: var(--text-main);
+            background: var(--bg-body);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        .doc-sidebar {
+            width: 280px;
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            padding: 2.5rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .sidebar-brand span { color: var(--primary); }
+
+        .nav-group { margin-bottom: 2rem; }
+        .nav-title {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .doc-content {
+            flex: 1;
+            padding: 4rem 6rem;
+            max-width: 1000px;
+        }
+
+        section { margin-bottom: 5rem; scroll-margin-top: 2rem; }
+        
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: var(--secondary); margin-bottom: 1rem; letter-spacing: -1.5px; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--secondary); margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-weight: 700; color: var(--secondary); margin-top: 2rem; margin-bottom: 1rem; }
+        
+        p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+
+        code { background: #fdf2f2; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'Monaco', monospace; font-size: 0.9em; color: var(--primary); }
+        pre { background: #1a1a1a; color: #e1e1e1; padding: 1.5rem; border-radius: 12px; overflow-x: auto; margin: 1.5rem 0; }
+        pre code { background: transparent; color: inherit; padding: 0; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .feature-box { background: var(--sidebar-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); }
+        .feature-box h4 { margin-bottom: 0.5rem; color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .doc-content { padding: 3rem; }
+            .doc-sidebar { width: 240px; }
+        }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            .doc-sidebar { width: 100%; height: auto; position: static; padding: 1.5rem; }
+            .doc-content { padding: 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="doc-sidebar">
+        <div class="sidebar-brand">AUTO<span>FIX.DOCS</span></div>
+        
+        <div class="nav-group">
+            <div class="nav-title">Fundamentals</div>
+            <a href="#overview" class="nav-link">Overview</a>
+            <a href="#structure" class="nav-link">Project Structure</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Execution</div>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#customization" class="nav-link">Customization</a>
+            <a href="#technical" class="nav-link">Technical Details</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">System Specs</div>
+            <a href="#compatibility" class="nav-link">Compatibility</a>
+            <a href="#credits" class="nav-link">Credits</a>
+        </div>
+    </aside>
+
+    <main class="doc-content">
+        <section id="overview">
+            <h1>Technical Documentation</h1>
+            <p>AutoFix is a premium industrial-strength HTML5 template for automotive centers. It utilizing a zero-framework architecture for peak mobile performance and rugged mechanical aesthetics.</p>
+        </section>
+
+        <section id="structure">
+            <h2>Project Structure</h2>
+            <pre><code>/car-repair-template
+│
+├── index.html              # Landing Page
+├── css/styles.css          # Design System (Tokens)
+├── js/main.js              # Interactivity
+└── images/                 # Automotive Assets</code></pre>
+        </section>
+
+        <section id="features">
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h4>Hero Slider</h4>
+                    <p>High-precision imagery slider with custom fade transitions and nav dots.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Service Grid</h4>
+                    <p>Modular service blocks with slide-up animations and hover interactive states.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Stats Counter</h4>
+                    <p>JavaScript driven numeric counters to showcase shop success and experience icons.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Rugged UX</h4>
+                    <p>Consistent industrial design with metallic highlights and high-contrast typography.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="customization">
+            <h2>Customization</h2>
+            <h3>Centralized Tokens</h3>
+            <p>Update your shop's branding by editing the <code>:root</code> variables in <code>styles.css</code>.</p>
+            <pre><code>:root {
+    --color-primary: #ff4d4d;  /* Mechanic Red */
+    --color-secondary: #1a1a1a; /* Industrial Grey */
+}</code></pre>
+        </section>
+
+        <section id="technical">
+            <h2>Technical Details</h2>
+            <ul>
+                <li><strong>HTML5 Semantic:</strong> Optimized for automotive local SEO.</li>
+                <li><strong>Vanilla JS Slider:</strong> Pure implementation without heavy libraries.</li>
+                <li><strong>Intersection Observer:</strong> Powers viewport-triggered animations for superior performance.</li>
+            </ul>
+        </section>
+
+        <section id="compatibility">
+            <h2>Browser Compatibility</h2>
+            <p>Optimized for Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge.</p>
+        </section>
+
+        <section id="credits">
+            <h2>Credits</h2>
+            <p>Developed and maintained by <strong>TemplateLayer.com</strong>.</p>
+            <ul>
+                <li>Typography: Google Fonts</li>
+                <li>Imagery: Unsplash</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
